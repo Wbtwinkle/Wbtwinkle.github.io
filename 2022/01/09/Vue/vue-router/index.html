@@ -4,15 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Web会话管理机制-Cookie、Session、JWT, TwinkleG">
-    <meta name="description" content="Web 开发模式服务端渲染优点：
+    <meta name="keywords" content="vue-router, TwinkleG">
+    <meta name="description" content="Vue-Router 路由基础起步参考：https://router.vuejs.org/zh/guide/ 官网文档
+使用 vue-router 的步骤：
 
-前端耗时少，服务器动态生成HTML内容，浏览器只需要请求服务器获取页面即可
-有利于SEO优化，服务器端响应的是完整的HTML页面内容，利于SEO
-
-缺点：
-
-占用大量服务器资源，因为在服务器端完成页面内容">
+npm install vue-router
+在项目src目录下，创建route">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -24,7 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Web会话管理机制-Cookie、Session、JWT | TwinkleG</title>
+    <title>vue-router | TwinkleG</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -316,12 +313,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Web会话管理机制-Cookie、Session、JWT</h1>
+                    <h1 class="description center-align post-title">vue-router</h1>
                 </div>
             </div>
         </div>
@@ -437,16 +434,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/cookie/">
-                                <span class="chip bg-color">cookie</span>
+                            <a href="/tags/vue-router/">
+                                <span class="chip bg-color">vue-router</span>
                             </a>
                         
-                            <a href="/tags/session/">
-                                <span class="chip bg-color">session</span>
-                            </a>
-                        
-                            <a href="/tags/jwt/">
-                                <span class="chip bg-color">jwt</span>
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
                             </a>
                         
                     </div>
@@ -457,8 +450,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Network/" class="post-category">
-                                Network
+                            <a href="/categories/Vue/" class="post-category">
+                                Vue
                             </a>
                         
                     </div>
@@ -470,7 +463,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-08
+                    2022-01-09
                 </div>
                 
 
@@ -491,78 +484,53 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="Web-开发模式"><a href="#Web-开发模式" class="headerlink" title="Web 开发模式"></a>Web 开发模式</h3><h5 id="服务端渲染"><a href="#服务端渲染" class="headerlink" title="服务端渲染"></a>服务端渲染</h5><p>优点：</p>
+                <h2 id="Vue-Router-路由基础"><a href="#Vue-Router-路由基础" class="headerlink" title="Vue-Router 路由基础"></a>Vue-Router 路由基础</h2><h3 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h3><p>参考：<a target="_blank" rel="noopener" href="https://router.vuejs.org/zh/guide/">https://router.vuejs.org/zh/guide/</a> 官网文档</p>
+<p>使用 vue-router 的步骤：</p>
 <ol>
-<li>前端耗时少，服务器动态生成HTML内容，浏览器只需要请求服务器获取页面即可</li>
-<li>有利于SEO优化，服务器端响应的是完整的HTML页面内容，利于SEO</li>
+<li>npm install vue-router</li>
+<li>在项目src目录下，创建router文件夹，在文件夹下新建一个index.js文件</li>
+<li>此步开始正式使用路由，首先在index.js文件内导入vue以及vue-router，并使用Vue.use()安装vue-router插件</li>
+<li>由于要配置组件和路径的路由映射关系，就需要导入组件，并定义路由映射关系 const routes = […]</li>
+<li>使用 const router = new VueRouter({ options… }) 创建路由对象实例，并配置 options，最基本的配置就是将第四步定义的路由映射关系载入，除此之外，常见的配置属性还有mode，它可以指定地址栏处的URL形式，分为 hash 和 history 模式，默认为 hash.</li>
+<li>导出 router，export default router</li>
+<li>在 main.js 文件内，导入 router 并挂载到 Vue 根实例，之后我们就可以在整个项目的任何 .vue 文件中使用 router(路由器) 和 route(当前路由)</li>
 </ol>
-<p>缺点：</p>
-<ol>
-<li>占用大量服务器资源，因为在服务器端完成页面内容的拼接，如果请求较多，服务器负载会较大</li>
-<li>不利于前后端分离，开发效率低，使用服务器端渲染，则无法分工合作，尤其对于前端复杂度高的项目，开发效率低。</li>
-</ol>
-<h5 id="前后端分离"><a href="#前后端分离" class="headerlink" title="前后端分离"></a>前后端分离</h5><p>依赖于 Ajax 技术的广泛应用，后端只需要提供 API 接口，前端使用网络请求技术例如 Ajax 或者第三方框架 Axios，调用接口以获取数据，进行页面渲染。</p>
-<p>优点：</p>
-<ol>
-<li>分工明确，前端专注于 UI 页面的开发，后端专注于 API 的开发</li>
-<li>利于优化用户体验，Ajax 技术可以实现局部页面刷新</li>
-<li>减轻了服务器端的渲染压力</li>
-</ol>
-<p>缺点：</p>
-<ol>
-<li>不利于SEO，但可以通过 Vue、React 框架等的 SSR 技术解决此问题。</li>
-</ol>
-<h3 id="身份认证"><a href="#身份认证" class="headerlink" title="身份认证"></a>身份认证</h3><h5 id="不同开发模式下的认证方式"><a href="#不同开发模式下的认证方式" class="headerlink" title="不同开发模式下的认证方式"></a>不同开发模式下的认证方式</h5><p>服务端渲染推荐使用 Session 认证机制，前后端分离推荐使用 JWT 认证机制</p>
-<h5 id="HTTP无状态性"><a href="#HTTP无状态性" class="headerlink" title="HTTP无状态性"></a>HTTP无状态性</h5><p>在HTTP 1.x版本协议中，HTTP是无状态协议，也就是说，当客户端发送给服务器端请求时，服务器端不会保存客户端的身份，当相同的客户端下一次再次访问服务器端时，服务器端无法识别是否是同一个客户端发送的请求。</p>
-<h5 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h5><p>参考：<a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904095711494151">https://juejin.cn/post/6844904095711494151</a></p>
-<p>使用Cookie可以解决HTTP无状态导致的问题，它是存储在用户本地的小型文本数据。一般不超过4KB。</p>
-<p>如何设置Cookie？Cookie 在身份认证中的作用？</p>
-<p>首先用户在客户端给服务器端发送一个请求，服务器端接收到客户端的请求后，生成一个Cookie，在响应中添加Set-Cookie字段，返回给客户端。当用户接收到来自服务器端的响应之后，会把Cookie保存在本地，在以后请求这个服务器时，会自动携带上本地未过期的Cookie，发送给服务器。</p>
-<p>Cookie的属性：</p>
-<ol>
-<li><p>expires 过期时间：它限制了在何时保存在本地浏览器或者硬盘中的Cookie会失效，当这个值未被指定时，默认为会话性Cookie【值为Session】，而会话性Cookie指的就是这个Cookie值保存在了客户端浏览器中，当用户关闭浏览器即失效。</p>
-<p>有些浏览器提供会话恢复功能，即使关闭了浏览器，会话Cookie也会保留下来。与会话Cookie相对应的是持久性Cookie，持久性的Cookie会保存在用户本地硬盘中，直到指定expires过期时间才会失效。</p>
-<p>值得注意的是，expires 它是HTTP 1.0协议的字段，在HTTP 1.1协议中expires被Max-Age替代。{ 这貌似是因为 expires 它的过期时间是客户端的，然而客户端和服务器端的时区可能不同，会造成意外失效？} Max-age就不会有这种意外，因为Max-age是以设置Cookie后多少秒以后失效，不是一个绝对值，是一个相对值。</p>
-<p>假如浏览器中 expires 字段和 Max-Age 同时存在，那么Max-Age优先级更高，如果Max-Age的值是一个正数，那么会持久化保存，如果是负数，相当于是会话级别的Cookie，如果是0，代表立即失效。</p>
-</li>
-<li><p>Domain 域：它可以限制客户端在请求哪些服务器时，才可以携带Cookie。如果客户端要访问的域名是Cookie中Domain的值，或者是这个值的子域，那么就会携带Cookie信息进行请求。</p>
-<p>比如Cookie中保存的Domain值为 baidu.com，那么我们访问baidu.com时或者访问百度手机端m.baidu.com时都会携带Cookie信息。</p>
-</li>
-<li><p>Path 路径：它和Domain的作用类似，Domain是限制域名，而Path是限制路径，只有是Path指定的路径或者其子路径才可以携带Cookie发送请求。</p>
-</li>
-<li><p>Secure 安全标志：它是唯一一个不需要键值对形式的Cookie属性，当使用了这个secure标志之后，只有经过HTTPS SSL安全连接的情况下，才可以发送Cookie；也就是HTTP协议不会携带Cookie，HTTPS协议才可以携带Cookie，它可以保护Cookie在网络传输过程中的安全。</p>
-</li>
-<li><p>HttpOnly：设置了这个属性为true后，防止客户端脚本通过document.cookie等方式访问Cookie，可以避免XSS攻击</p>
-</li>
-<li><p>SameSite：2020年2月份发布的Chrome 80版本，默认屏蔽了第三方Cookie，SameSite属性值由旧版本的none改为了默认为Lax。当属性值为none时，无论是否跨站，都会发送Cookie；当属性值为Lax时，允许部分第三方请求发送Cookie，使用post表单、Ajax、iframe、Image src属性都不会再发送Cookie.【需要进一步了解，个人目前没有搞的特别清楚】</p>
-</li>
-</ol>
-<h5 id="Cookie-的缺陷"><a href="#Cookie-的缺陷" class="headerlink" title="Cookie 的缺陷"></a>Cookie 的缺陷</h5><ol>
-<li>存在限制，每个域最多20个Cookie，每个Cookie最多4KB内存，超出域限制的Cookie会被自动清除</li>
-<li>部分Cookie不需要频繁发送，但是每次请求都会携带上所有Cookie</li>
-<li>存在安全隐患，如果没有设置HttpOnly的话，会有XSS攻击风险，容易伪造Cookie</li>
-</ol>
-<h5 id="Cookie-的作用"><a href="#Cookie-的作用" class="headerlink" title="Cookie 的作用"></a>Cookie 的作用</h5><ol>
-<li>会话状态管理（用户登录状态、购物车不会刷新一次就被清空等）</li>
-<li>个性化设置（识别同一个客户端用户的身份，保留用户自定义设置等）</li>
-<li>浏览器行为跟踪（分析用户行为）</li>
-</ol>
-<h5 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h5><p>Session是另一种记录会话状态的机制，Session是基于Cookie实现的，它存储于服务器端。</p>
-<p>具体流程是：当用户在客户端第一次请求服务器时，服务器根据用户信息创建Session，保存在服务器内部，并在响应中发送给客户端一个SessionID作为客户端标识信息。浏览器接收到服务器返回的SessionID信息后，将信息存入到Cookie中。当下一次用户访问服务器时，会携带Cookie发送给服务器端，服务器从Cookie中获取SessionID查找服务器内存中的对应Session，如果找到，则用户可继续执行后续操作，若未找到，则说明用户信息失效。</p>
-<h5 id="Cookie-与-Session-对比"><a href="#Cookie-与-Session-对比" class="headerlink" title="Cookie 与 Session 对比"></a>Cookie 与 Session 对比</h5><p>安全性：Session 比 Cookie 安全，Session 存储在服务器端，Cookie 存储在本地，可以被伪造修改。</p>
-<p>存取值的类型：Cookie只支持字符串型数据，Session可以存放任意类型数据。</p>
-<p>有效期：Cookie可设置为长时间保存，Session存储在服务器上，会对服务器造成一定压力。默认情况下客户端关闭就会失效，也不建议将其长时间存储。</p>
-<p>存储大小：Cookie不能超过4KB，Session远远大于Cookie，但是会占用服务器资源。</p>
-<h5 id="JWT-认证机制"><a href="#JWT-认证机制" class="headerlink" title="JWT 认证机制"></a>JWT 认证机制</h5><p>可以参考一下：<a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html">http://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html</a></p>
-<p>JWT全称 JSON Web Token，是目前最流行的跨域认证解决方案。由于Session需要和Cookie搭配使用，而Cookie无法跨域，所以需要额外进行很多配置实现跨域，因此在跨域情境下实现身份认证通常采用JWT方式。</p>
-<h5 id="JWT-工作原理"><a href="#JWT-工作原理" class="headerlink" title="JWT 工作原理"></a>JWT 工作原理</h5><p>用户在浏览器端向服务器端发送请求，服务器端接收用户请求，验证用户账号密码等，将用户信息加密成Token字符串，但不会保留在服务器端，而是响应回客户端。客户端接收到加密Token信息后存储到本地localStorage或SessionStorage，在用户下一次发送请求时，携带此加密信息于请求头Authorization中，一并发送给服务器端，服务器端解析请求头字段获取用户信息，根据得到的用户信息，针对不用用户响应不同内容给用户客户端浏览器。</p>
-<h5 id="JWT-组成部分"><a href="#JWT-组成部分" class="headerlink" title="JWT 组成部分"></a>JWT 组成部分</h5><p>JWT由三部分组成，分别为Header、Payload以及Signature，用户信息加密后就形成了Payload部分，而Header和Signature部分是安全性相关部分，作用是保证Token安全性。</p>
-<h5 id="JWT-的使用"><a href="#JWT-的使用" class="headerlink" title="JWT 的使用"></a>JWT 的使用</h5><p>在Express框架中，使用JWT，需要安装两个JWT相关第三方包。</p>
-<p>npm install jsonwebtoken    npm install express-jwt</p>
-<h6 id="jsonwebtoken"><a href="#jsonwebtoken" class="headerlink" title="jsonwebtoken"></a>jsonwebtoken</h6><p>用于生成 JWT 加密字符串</p>
-<h6 id="express-jwt"><a href="#express-jwt" class="headerlink" title="express-jwt"></a>express-jwt</h6><p>用于将 JWT 加密字符串解析还原成 json 对象格式信息</p>
-<h6 id="secret秘钥"><a href="#secret秘钥" class="headerlink" title="secret秘钥"></a>secret秘钥</h6><p>为了保证 JWT 字符串的安全性，防止 JWT 字符串在网络传输过程中被别人破解，我们需要专门定义一个用于加密和解密的 secret 密钥，生成 JWT 字符串时，使用秘钥加密，解析 JWT 字符串为 JSON 对象时，需要使用秘钥解密。</p>
-<h6 id="代码示例：个人使用-postman-测试接口"><a href="#代码示例：个人使用-postman-测试接口" class="headerlink" title="代码示例：个人使用 postman 测试接口"></a>代码示例：个人使用 postman 测试接口</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>); <span class="comment">// 导入express</span></span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line">app.use(express.urlencoded(&#123; <span class="attr">extended</span>: <span class="literal">false</span>&#125;)); <span class="comment">// 解析urlencoded格式</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> jwt = <span class="built_in">require</span>(<span class="string">&#x27;jsonwebtoken&#x27;</span>); <span class="comment">// 导入jsonwebtoken</span></span><br><span class="line"><span class="keyword">const</span> expressJWT = <span class="built_in">require</span>(<span class="string">&#x27;express-jwt&#x27;</span>); <span class="comment">// 导入express-jwt</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> secretStr = <span class="string">&quot;twinkleG.icu&quot;</span>; <span class="comment">// secret加密</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 登录接口</span></span><br><span class="line">app.get(<span class="string">&#x27;/login&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> userInfo = req.body;</span><br><span class="line">  <span class="built_in">console</span>.log(userInfo);</span><br><span class="line">  <span class="comment">// 通过postman发送get请求携带body x-www-form-urlencoded 用户名和密码信息</span></span><br><span class="line">  <span class="keyword">if</span>(userInfo.username !== <span class="string">&#x27;admin&#x27;</span> || userInfo.password !== <span class="string">&#x27;123456&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> res.send(&#123; <span class="comment">// 用户名或密码错误</span></span><br><span class="line">      <span class="attr">status</span>: <span class="number">400</span>,</span><br><span class="line">      <span class="attr">message</span>: <span class="string">&quot;Login unsuccessfully.&quot;</span></span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 返回登录成功以及jwt加密token</span></span><br><span class="line">  res.send(&#123;</span><br><span class="line">    <span class="attr">status</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="attr">message</span>: <span class="string">&quot;Login successfully.&quot;</span>,</span><br><span class="line">    <span class="attr">token</span>: jwt.sign(&#123;<span class="attr">username</span>: userInfo.username&#125;, secretStr, &#123; <span class="attr">expiresIn</span>: <span class="string">&#x27;300s&#x27;</span>&#125;)</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用expressJWT中间件，解析加密jwt token</span></span><br><span class="line">app.use(expressJWT(&#123;<span class="attr">secret</span>: secretStr, <span class="attr">algorithms</span>:[<span class="string">&#x27;HS256&#x27;</span>]&#125;));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试获取加密token接口</span></span><br><span class="line">app.get(<span class="string">&#x27;/admin&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> user = req.user; <span class="comment">// 只要配置好express-jwt中间件，就自动为req添加了user属性</span></span><br><span class="line">  res.send(&#123;</span><br><span class="line">    <span class="attr">status</span>: <span class="number">200</span>,</span><br><span class="line">    <span class="attr">data</span>: user</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">  &#123;</span></span><br><span class="line"><span class="comment">    &quot;status&quot;: 200,</span></span><br><span class="line"><span class="comment">    &quot;data&quot;: &#123;</span></span><br><span class="line"><span class="comment">        &quot;username&quot;: &quot;admin&quot;,</span></span><br><span class="line"><span class="comment">        &quot;iat&quot;: 1641628405,  // token有效期开始时间</span></span><br><span class="line"><span class="comment">        &quot;exp&quot;: 1641628705   // token有效期结束时间，我设置了300s，所以后三位705 - 405 = 300</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;server-jwt has been started successfully.&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="动态路由匹配"><a href="#动态路由匹配" class="headerlink" title="动态路由匹配"></a>动态路由匹配</h3><p>参考：<a target="_blank" rel="noopener" href="https://router.vuejs.org/zh/guide/essentials/dynamic-matching.html">https://router.vuejs.org/zh/guide/essentials/dynamic-matching.html</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">  <span class="attr">routes</span>: [</span><br><span class="line">    <span class="comment">// 动态路径参数 以冒号开头</span></span><br><span class="line">    &#123; <span class="attr">path</span>: <span class="string">&#x27;/user/:id&#x27;</span>, <span class="attr">component</span>: User &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>当我们配置了以上信息后，如果启动项目访问了 <a target="_blank" rel="noopener" href="http://localhost:8080/user/twinkleg">http://localhost:8080/user/twinkleg</a> ，那么将会在页面上看到渲染了 User 组件的内容，并且此时可以通过 this.$route.params.id 获取到值 “twinkleg”.</p>
+<p>同时 $route 不仅可以获取当前路由的动态参数，只要是有关于当前路由的信息，大部分都有与之对应的获取方法，例如 .query 可以获取当前路由的查询参数，.hash 可以获取当前路由的哈希地址等等.</p>
+<h5 id="响应路由参数的变化"><a href="#响应路由参数的变化" class="headerlink" title="响应路由参数的变化"></a>响应路由参数的变化</h5><p>当我们像以上那样使用动态路由时，如果动态路径参数改变，那么由于渲染的是同一个组件，因此组件会被复用，而不会重新回调生命周期钩子函数，为了解决这个问题，我们可以使用 watch 来监听 $route 的变化，如果改变则执行你想执行的操作。或者使用导航守卫，后续我们再讲解0.0.</p>
+<h5 id="捕获所有路由或-404-Not-found-路由"><a href="#捕获所有路由或-404-Not-found-路由" class="headerlink" title="捕获所有路由或 404 Not found 路由"></a>捕获所有路由或 404 Not found 路由</h5><h5 id="高级匹配模式"><a href="#高级匹配模式" class="headerlink" title="高级匹配模式"></a>高级匹配模式</h5><h5 id="匹配优先级"><a href="#匹配优先级" class="headerlink" title="匹配优先级"></a>匹配优先级</h5><p>有时候，同一个路径可以匹配多个路由，此时，匹配的优先级就按照路由的定义顺序：路由定义得越早，优先级就越高。</p>
+<h3 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h3><p>当我们在 routes 中配置一个最基本路由：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> &#123;</span><br><span class="line">   <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line"><span class="attr">component</span>: Index</span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure>
+
+<p>可以在 App.Vue 中使用 router-view 将对应组件渲染在 router-view 部分</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>如果我们希望使用嵌套路由：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">path</span>: <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line">  <span class="attr">redirect</span>: <span class="string">&#x27;/son1&#x27;</span>, <span class="comment">// 访问 localhost 页面时，自动重定向到 localhost/son1 页面</span></span><br><span class="line">  <span class="attr">component</span>: Index,</span><br><span class="line">  <span class="attr">children</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">path</span>: <span class="string">&#x27;son1&#x27;</span>,</span><br><span class="line">      <span class="attr">component</span>: IndexSon1</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">path</span>: <span class="string">&#x27;son2&#x27;</span>,</span><br><span class="line">      <span class="attr">component</span>: IndexSon2</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>那么不仅在 App.vue 中可以使用 router-view 渲染 Index组件，还可以在 Index 组件内再次使用 router-view 渲染它的子路由，当URL为 /son1时，渲染出来的是 IndexSon1 组件，而URL为 /son2时，渲染出来的是 IndexSon2 组件。</p>
+<h3 id="声明式和编程式导航"><a href="#声明式和编程式导航" class="headerlink" title="声明式和编程式导航"></a>声明式和编程式导航</h3><p>声明式导航即使用<router-link to="..."> 标签进行路由跳转，而编程式导航是使用 router.push 方法进行路由跳转，实际上，声明式导航调用了 router.push 方法来实现跳转。所以说，两者本质上等同。</p>
+<p>注意的是当使用 router.push 时，有三种方式，一种是直接提供一个字符串路径，另外两种都是提供一个对象，一种对象使用属性 path + query，另一种对象使用属性 name + params，而使用 path + params 会自动忽略 params.</p>
+<h5 id="响应路由参数的变化-1"><a href="#响应路由参数的变化-1" class="headerlink" title="响应路由参数的变化"></a>响应路由参数的变化</h5><p>可能你看到这里会觉得好像之前提过这个，确实，当你只是目的路由和当前路由渲染的组件一致，只是params不同时，需要 watch 监听 route 或者使用 beforeRouteUpdate 来响应这个变化。【导航守卫之后讲，只是这里重复强调一下这个知识点.】</p>
+<h5 id="操作-history"><a href="#操作-history" class="headerlink" title="操作 history"></a>操作 history</h5><p>上面提到的 router.push 方法只是用于页面前进跳转，此时会将访问的路由URL推进history栈中，如果希望返回，可以点击浏览器返回上一个页面。与之类似的，还有 router.replace() 和 router.go()方法，replace 不会存入 history 栈中，它仅仅替换当前页面。go 方法接收数值参数，正整数n则前进n个页面，负整数n则回退n个页面. </p>
+<h3 id="命名路由"><a href="#命名路由" class="headerlink" title="命名路由"></a>命名路由</h3><p>我们在编程式导航处提到过，在路由跳转时有一种对象形式的跳转需要两个属性：name 、params，其中 name 就是这一节要讲的命名路由。</p>
+<p>在routes中配置路由时，可以为一个路由映射关系配置一个name属性，之后在跳转时，可以借助于这个name属性进行页面路由跳转。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">path</span>: <span class="string">&#x27;/user/:id&#x27;</span>,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;twinkle&#x27;</span>, <span class="comment">// 给这个路由命名为 twinkle</span></span><br><span class="line">  <span class="attr">component</span>: DynamicRouter</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;button @click=&quot;routerToDynamic&quot;&gt;点我去到/user/xxx&lt;/button&gt; </span><br><span class="line">&lt;!-- 在页面渲染一个按钮，点击触发 routerToDynamic 事件 --&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  export default &#123;</span><br><span class="line">    name: &quot;Index&quot;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      routerToDynamic() &#123;</span><br><span class="line">        // 在这里使用 $router.push() 指定两个属性，name以及params，name就是路由配置时指定的name，这样就可以路由到 URL -&gt; localhost/user/twinkleg</span><br><span class="line">        this.$router.push(&#123;</span><br><span class="line">          name: &#x27;twinkle&#x27;,</span><br><span class="line">          params: &#123;</span><br><span class="line">            id: &#x27;twinkleg&#x27;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="命名视图"><a href="#命名视图" class="headerlink" title="命名视图"></a>命名视图</h3><p>当我们希望在同级渲染多个视图而不是嵌套时，可以使用命名视图，具体介绍直接参考官方文档.</p>
+<p><a target="_blank" rel="noopener" href="https://router.vuejs.org/zh/guide/essentials/named-views.html">https://router.vuejs.org/zh/guide/essentials/named-views.html</a></p>
+<h3 id="重定向和别名"><a href="#重定向和别名" class="headerlink" title="重定向和别名"></a>重定向和别名</h3><p>重定向 redirect，通常用于加载首屏时，重定向到某个页面。重定向和别名都很容易理解，自行看官方文档即可。</p>
+<p><a target="_blank" rel="noopener" href="https://router.vuejs.org/zh/guide/essentials/redirect-and-alias.html">https://router.vuejs.org/zh/guide/essentials/redirect-and-alias.html</a></p>
+<h3 id="路由组件传参"><a href="#路由组件传参" class="headerlink" title="路由组件传参"></a>路由组件传参</h3><p>在一个组件配置了路由映射关系后，如果在组件内使用 $route 则，必然会形成耦合。使得组件复用性受到限制，因此可以采用 props 解耦合，在个人项目中暂未接触到此部分知识点。或许以后会再来详细了解并更新补充，目前如果有需要就直接看官网吧.</p>
+<p><a target="_blank" rel="noopener" href="https://router.vuejs.org/zh/guide/essentials/passing-props.html">https://router.vuejs.org/zh/guide/essentials/passing-props.html</a></p>
+<h2 id="Vue-Router-路由进阶"><a href="#Vue-Router-路由进阶" class="headerlink" title="Vue-Router 路由进阶"></a>Vue-Router 路由进阶</h2>
                 
             </div>
             <hr/>
@@ -588,7 +556,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/01/08/Nodejs/Web%20%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F/">http://example.com/2022/01/08/Nodejs/Web%20%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F/</a>
+                    <a href="http://example.com/2022/01/09/Vue/vue-router/">http://example.com/2022/01/09/Vue/vue-router/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -626,16 +594,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/cookie/">
-                                    <span class="chip bg-color">cookie</span>
+                                <a href="/tags/vue-router/">
+                                    <span class="chip bg-color">vue-router</span>
                                 </a>
                             
-                                <a href="/tags/session/">
-                                    <span class="chip bg-color">session</span>
-                                </a>
-                            
-                                <a href="/tags/jwt/">
-                                    <span class="chip bg-color">jwt</span>
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
                                 </a>
                             
                         </div>
@@ -807,9 +771,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/01/09/Vue/vue-router/">
                     <div class="card-image">
@@ -827,9 +792,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -842,6 +807,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -864,13 +830,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/01/08/%E8%93%9D%E6%A1%A5%E6%9D%AF/2019%E8%93%9D%E6%A1%A5%E6%9D%AF%E7%9C%81%E8%B5%9BB%E7%BB%84/">
+                <a href="/2022/01/08/Nodejs/Web%20%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="2019蓝桥杯B组省赛部分题解">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Web会话管理机制-Cookie、Session、JWT">
                         
-                        <span class="card-title">2019蓝桥杯B组省赛部分题解</span>
+                        <span class="card-title">Web会话管理机制-Cookie、Session、JWT</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -887,8 +853,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Algorithm/" class="post-category">
-                                    Algorithm
+                            <a href="/categories/Network/" class="post-category">
+                                    Network
                                 </a>
                             
                             
@@ -898,12 +864,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/algorithm/">
-                        <span class="chip bg-color">algorithm</span>
+                    <a href="/tags/cookie/">
+                        <span class="chip bg-color">cookie</span>
                     </a>
                     
-                    <a href="/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/">
-                        <span class="chip bg-color">蓝桥杯</span>
+                    <a href="/tags/session/">
+                        <span class="chip bg-color">session</span>
+                    </a>
+                    
+                    <a href="/tags/jwt/">
+                        <span class="chip bg-color">jwt</span>
                     </a>
                     
                 </div>
